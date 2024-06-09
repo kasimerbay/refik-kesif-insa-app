@@ -48,14 +48,14 @@
 		<!-- One -->
 		<section id="one" class="wrapper style2 spotlights">
 			<section>
-				<a href="#" class="image"><img src="{% static 'images/pic03.jpg' %%}" alt="" data-position="25% 25%" /></a>
+				<a href="#" class="image"><img src="{% static 'images/pic03.jpg' %}" alt="" data-position="25% 25%" /></a>
 				<div class="content">
 					<div class="inner">
 						<h2>Köklü Medeniyetimize Bütünsel bir Bakış</h2>
 						<p>İçinde bulunduğumuz çağın geçmişteki dönüşümlerin bir neticesi olduğunun farkındayız. Bugün
 							aldığımız kararlara dikkat ediyoruz...</p>
 						<ul class="actions">
-							<li><a href="generic.html" class="button">Daha Fazla Öğren</a></li>
+							<li><a href="{% url 'generic' %}" class="button">Daha Fazla Öğren</a></li>
 						</ul>
 					</div>
 				</div>
@@ -67,7 +67,7 @@
 						<h2>Mesleki ve Teknik Eğitimler</h2>
 						<p>Mentörler ve Uzmanlar Eşliğinde Kariyer Planlaması</p>
 						<ul class="actions">
-							<li><a href="generic.html" class="button">Daha Fazla Öğren</a></li>
+							<li><a href="{% url 'generic' %}" class="button">Daha Fazla Öğren</a></li>
 						</ul>
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 						<p>Farklı üniversiteler ve farklı bölümlerden dostluklar edindiğimiz ve birlikte geçirdiğimiz 4
 							sene...</p>
 						<ul class="actions">
-							<li><a href="generic.html" class="button">Daha Fazla Öğren</a></li>
+							<li><a href="{% url 'generic' %}" class="button">Daha Fazla Öğren</a></li>
 						</ul>
 					</div>
 				</div>
@@ -128,7 +128,7 @@
 					</section>
 				</div>
 				<ul class="actions">
-					<li><a href="generic.html" class="button">Daha Fazla Öğren</a></li>
+					<li><a href="{% url 'generic' %}" class="button">Daha Fazla Öğren</a></li>
 				</ul>
 			</div>
 		</section>
