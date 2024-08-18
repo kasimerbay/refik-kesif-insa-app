@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container mt-5 text-align-start">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-4">{{ items.model_name }}</h2>
+            <div class="text-right">
+                <a href="{{ items.objects.first.add }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+            </div>
+        </div>
+        {% if items.objects %}
+            <div class="card shadow-sm p-4">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            {% for field in items.fields %}
+                                <th>{{ field | title }}</th>
+                            {% endfor %}
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for values in items.values %}
+                            <tr>
+                                {% for value in values %}
+                                    {% if 'https' in value %}
+                                        <td><a href="{{ value }}" target="_blank"><i class="fas fa-link"></i></a></td>
+                                    {% else %}
+                                        <td>{{ value }}</td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        {% else %}
+        <p>Henüz bir girdi bulunmamaktadır.</p>
+        {% endif %}
+    </div>
+{% endblock content %}

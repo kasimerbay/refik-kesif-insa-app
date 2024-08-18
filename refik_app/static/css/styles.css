@@ -1,0 +1,52 @@
+* {
+    font-family: sans-serif,monospace;
+}
+
+/* Hide navbar elements initially */
+.navbar-nav {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Reveal navbar elements on hover */
+.navbar:hover .navbar-nav {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom hover effect for navbar items */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: transparent;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::before {
+    background-color: #000;
+    transform: translateX(0);
+}
+
+.navbar-nav .nav-link:hover {
+    transform: translateX(10px); /* Slide the text to the right */
+}
+
+.navbar-toggler {
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    transform: rotate(90deg);
+}
+

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{# Load the tag library #}
+{% load django_bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+
+    <button class="btn btn-outline-info my-1"><a href="{{ object.list }}"><i class="fas fa-arrow-left"></i></a></button>
+
+    <div class="container w-50">
+        {# Display a form #}
+        <form method="post" class="form">
+            {% csrf_token %}
+            <hr class="w-25">
+            <p>"{{ object.title }}" silinecektir. Devam etmek istiyor musunuz?</p>
+            {% bootstrap_form form %}
+
+            {% bootstrap_button button_type="submit" content="Sil" %}
+
+        </form>
+    </div>
+
+{% endblock content %}

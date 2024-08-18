@@ -1,0 +1,19 @@
+{% extends 'app_list.html' %}
+
+{% block table_data %}
+    {% for objs in items.objects %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ objs.tag }}</td>
+            <td><a href="{{ objs.get_absolute_url }}">{{ objs.title }}</a></td>
+            <td><a href="{{ objs.link }}" target="_blank"><i class="fas fa-link"></i></a></td>
+            <td>{{ objs.added|date:"Y-m-d H:i" }}</td>
+            <td class="d-flex flex-row justify-content-end">
+
+                    <a href="{{ objs.edit }}" class="btn btn-info"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="{{ objs.remove }}" class="btn btn-danger mx-1"><i class="fa-solid fa-trash-can"></i></a>
+
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock table_data %}

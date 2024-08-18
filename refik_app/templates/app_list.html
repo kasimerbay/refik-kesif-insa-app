@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{items.model_name}}</h2>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <tr>
+                {% for field in items.fields %}
+                    <th>{{ field | title }}</th>
+                {% endfor %}
+            </tr>
+        </tr>
+    </thead>
+    <tbody>
+        {% block table_data %}
+
+        {% endblock table_data %}
+    </tbody>
+</table>
+<a href="{{ items.objects.first.add }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></a>
+{% endblock content %}
