@@ -3,7 +3,6 @@
 {% block table_data %}
     {% for objs in items.objects %}
         <tr>
-            <th scope="row">{{ forloop.counter }}</th>
             <td><a href="{{ objs.get_absolute_url }}">{{ objs.title }}</a></td>
             <td>{{ objs.composer }}</td>
             <td><a href="{{ objs.link }}" target="_blank"><i class="fas fa-link"></i></a></td>

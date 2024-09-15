@@ -26,7 +26,6 @@ class HadislerListView(LoginRequiredMixin, ListView):
             "objects": objects,
             "values":values
         }
-
         return context
 
     def get_queryset(self):
@@ -47,7 +46,7 @@ class HadislerCreateView(CreateView):
         self.object.user = self.request.user
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
-    
+
 class HadislerDeleteView(DeleteView):
     model = Hadisler
     success_url = "/hadisler"

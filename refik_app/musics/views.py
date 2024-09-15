@@ -12,7 +12,8 @@ class MusicListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs,):
         context = super().get_context_data(**kwargs)
 
-        fields = [str(i).split(".")[2] for i in Musics._meta.fields[:6]]
+        fields = [str(i).split(".")[2] for i in Musics._meta.fields]
+        print(fields)
         objects = Musics.objects.all()
         values = sorted([i for i in objects.values_list()])
         iters = [list(i) for i in zip(values,objects)]
