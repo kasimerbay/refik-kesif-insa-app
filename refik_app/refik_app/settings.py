@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'home',
     'hadisler',
     'musics',
-    'poems',
-    'books',
     'django_bootstrap5',
 
 ]
